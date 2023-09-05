@@ -10,7 +10,7 @@
 <title>Persons and Licenses</title>
 </head>
 <body>
-	<h1>Person's:</h1>
+	<h1>People:</h1>
 	<div>
 		<c:forEach var="person" items="${persons}">
 			<p><a href="/${person.id}"><c:out value="${person.firstName}"/> <c:out value="${person.lastName}"/></a>

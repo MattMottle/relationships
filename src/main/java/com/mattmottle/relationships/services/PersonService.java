@@ -18,16 +18,16 @@ public class PersonService {
 		this.personRepository = personRepository;
 	}
 
-	// Create an expense
+	// Create a person
 	public Person createPerson(Person newPerson) {
 		return personRepository.save(newPerson);
 	}
 	
-	// Read all expense
+	// Read all person
 	public List<Person> readAllPersons() {
 		return personRepository.findAll();
 	}
-	// Read one expense
+	// Read one person
 	public Person findPerson(Long id) {
         Optional<Person> optionalPerson = personRepository.findById(id);
         if(optionalPerson.isPresent()) {
@@ -36,11 +36,11 @@ public class PersonService {
             return null;
         }
     }
-	//update expense
+	//update person
 	public Person updatePerson(Person updatedPerson) {
 		return personRepository.save(updatedPerson);
 }
-//	  deletes expense
+//	  deletes person
     public void deletePerson(Long id) {
 		personRepository.deleteById(id);	
 	}

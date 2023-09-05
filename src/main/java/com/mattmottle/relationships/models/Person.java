@@ -10,6 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 
 @Entity
@@ -30,6 +32,15 @@ public class Person {
     public Person() {
         
     }
+    
+    @PrePersist
+	 protected void onCreate(){
+		 this.createdAt = new Date();
+	    }
+	@PreUpdate
+	protected void onUpdate(){
+		this.updatedAt = new Date();
+	    }
 
 	public Long getId() {
 		return id;
